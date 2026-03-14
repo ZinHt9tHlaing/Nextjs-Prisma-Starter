@@ -1,39 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# This is a Next.js + TypeScript + Prisma + Neon Postgres Starter
+
+A Repo for building with **[Next.js](https://nextjs.org)**, **TypeScript**, **Prisma ORM**, and **[Neon Postgres](https://neon.com/)** (serverless Postgres). This starter project provides a solid foundation with a clean architecture, environment configuration, and database integration.
+
+## ✨ Features
+
+- ⚡ Next.js 15+ (App Router)
+- 🔷 TypeScript for type safety
+- 🗄️ Prisma ORM for database access)
+- 🐘 Neon Postgres serverless database
+- 🔐 Environment variable support
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+- A [Neon](https://neon.tech/) account (free tier available)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
 
-```need to run
+```bash
+git clone https://github.com/ZinHt9tHlaing/Nextjs-Prisma-Testing.git
+cd your-repo-name
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+or
+
+```bash
+pnpm install
+```
+
+### 3. Set up environment variables
+
+```bash
+DATABASE_URL="postgresql://<user>:<password>@<host>/<dbname>?sslmode=require"
+```
+
+### 4. Set up Prisma and the database
+
+Generate Prisma client.
+```bash
 npx prisma generate
+```
+
+Run database migrations.
+```bash
+npx prisma migrate dev
+```
+
+Open Prisma Studio.
+```bash
+npx prisma studio
+```
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
+```
+or
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📁 Project Structure
+```
+.
+├── app
+│   └── page.tsx
+│
+├── lib
+│   └── prisma.ts
+│
+├── prisma
+│   └── schema.prisma
+│
+├── public
+│
+├── .env
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🐘 Neon Database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses **Neon serverless PostgreSQL**.
 
-## Learn More
+Steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Go to https://neon.tech
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Create a new project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Copy the connection string
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Add it to .env
