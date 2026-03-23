@@ -38,6 +38,20 @@ pnpm install
 
 ### 3. Set up environment variables
 
+## 🐘 Neon Database
+
+This project uses **Neon serverless PostgreSQL**.
+
+Steps:
+
+1. Go to https://neon.tech
+
+2. Create a new project
+
+3. Copy the connection string
+
+4. Add it to .env.local
+
 ```bash
 DATABASE_URL="postgresql://<user>:<password>@<host>/<dbname>?sslmode=require"
 ```
@@ -84,22 +98,8 @@ pnpm dev
 │
 ├── public
 │
-├── .env
+├── .env.local
 ├── package.json
 ├── tsconfig.json
 └── README.md
 ```
-
-## 🐘 Neon Database
-
-This project uses **Neon serverless PostgreSQL**.
-
-Steps:
-
-1. Go to https://neon.tech
-
-2. Create a new project
-
-3. Copy the connection string
-
-4. Add it to .env
